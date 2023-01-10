@@ -5,8 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class isAvailable {
-
-    private Boolean available;
-
+public class AvailableSpace {
+    private int spaces;    
 }
