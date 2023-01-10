@@ -2,6 +2,9 @@ package com.example.maersk.domain;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
@@ -10,6 +13,8 @@ import java.util.UUID;
 
 @Table
 @Data
+@Getter
+@Setter
 public class Bookings {
 
     @PrimaryKey

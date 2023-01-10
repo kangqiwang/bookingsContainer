@@ -1,7 +1,11 @@
 package com.example.maersk.repo;
 
 
+import java.util.UUID;
+
 import  org.springframework.data.cassandra.repository.ReactiveCassandraRepository;
-public interface BookingsRepo extends ReactiveCassandraRepository {
+
+import com.example.maersk.domain.Bookings;
+public interface BookingsRepo extends ReactiveCassandraRepository<Bookings,UUID> {
 
 }
