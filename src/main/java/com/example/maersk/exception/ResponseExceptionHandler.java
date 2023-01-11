@@ -9,6 +9,9 @@ import org.springframework.web.server.handler.ResponseStatusExceptionHandler;
 
 @ControllerAdvice
 public class ResponseExceptionHandler extends ResponseStatusExceptionHandler {
+
+
+    
     @ExceptionHandler(value = { IllegalArgumentException.class, IllegalStateException.class })
     protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
         String errorMsg = "Sorry there was a problem processing your request";

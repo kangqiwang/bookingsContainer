@@ -5,15 +5,11 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import org.springframework.data.annotation.*;
+import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-import java.util.Date;
-import java.util.UUID;
-
-import javax.persistence.*;
-import javax.persistence.Id;
+import java.sql.Timestamp;
 
 @Table("bookings")
 @Data
@@ -21,23 +17,26 @@ import javax.persistence.Id;
 @Setter
 public class Bookings {
 
-    @PrimaryKey
-    private UUID id;
+    @PrimaryKey(value = "booking_ref_id")
+    private int bookingRefId = 957000001;
 
+    @Column(value = "container_size")
     private int containerSize;
 
-    private ContainerType containerType;
+    @Column(value = "container_type")
+    private String containerType;
 
+    @Column(value = "origin")
     private String origin;
 
+    @Column(value = "destination")
     private String destination;
 
+    @Column(value = "quantity")
     private int quantity;
 
-    private Date timeStamp;
+    @Column(value = "time_stamp")
+    private Timestamp timeStamp;
 
-    public Bookings() {
-        this.id = UUID.randomUUID();
-    }
 
 }
